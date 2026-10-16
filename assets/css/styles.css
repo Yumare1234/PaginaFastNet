@@ -68,19 +68,62 @@ header {
 nav ul {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1rem;
+    align-items: center;
 }
 
 nav a {
+    position: relative;
     text-decoration: none;
     color: var(--text-main);
     font-weight: 600;
     font-size: 0.95rem;
-    transition: color 0.3s ease;
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+    transition: all 0.3s ease;
 }
 
-nav a:hover {
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0.9rem;
+    right: 0.9rem;
+    bottom: 0.35rem;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--gradient-orange);
+    transform: scaleX(0);
+    transform-origin: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
     color: var(--primary-orange);
+    background: rgba(255, 85, 0, 0.08);
+}
+
+nav a:hover::after,
+nav a.active::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+nav a.active {
+    animation: planesPulse 1.6s ease-in-out infinite;
+    box-shadow: 0 0 0 1px rgba(255, 85, 0, 0.08);
+}
+
+@keyframes planesPulse {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 0 0 rgba(255, 85, 0, 0.15);
+    }
+    50% {
+        transform: translateY(-1px) scale(1.03);
+        box-shadow: 0 6px 18px rgba(255, 85, 0, 0.18);
+    }
 }
 
 .btn-header {

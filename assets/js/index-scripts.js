@@ -15,6 +15,38 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.scroll-reveal, .fade-in').forEach(el => {
         observer.observe(el);
     });
+
+    const navLinks = [...document.querySelectorAll('nav a[href^="#"]')];
+    const sections = navLinks
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+
+    if (sections.length > 0) {
+        const sectionObserver = new IntersectionObserver((entries) => {
+            const visibleEntry = entries
+                .filter(entry => entry.isIntersecting)
+                .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+            if (!visibleEntry) return;
+
+            const currentId = visibleEntry.target.id;
+
+            navLinks.forEach(link => {
+                const isActive = link.getAttribute('href') === `#${currentId}`;
+                link.classList.toggle('active', isActive);
+                if (isActive) {
+                    link.setAttribute('aria-current', 'page');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
+            });
+        }, {
+            rootMargin: '-20% 0px -55% 0px',
+            threshold: [0.15, 0.35, 0.6]
+        });
+
+        sections.forEach(section => sectionObserver.observe(section));
+    }
 });
 
 document.addEventListener('DOMContentLoaded', function () {
