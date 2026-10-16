@@ -1,0 +1,446 @@
+/* ========== ESTILOS COMPACTOS, DECORATIVOS Y RESPONSIVOS ========== */
+.form-section {
+    background: radial-gradient(circle at top right, #1a2332 0%, #0d1117 100%);
+    padding: 3rem 2%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decoración de fondo sutil */
+.form-section::after {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,115,0,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Bloque introductorio */
+.form-intro {
+    text-align: center;
+    max-width: 600px;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.form-intro h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #ffffff 0%, #ff7300 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.form-intro p {
+    color: #b0b8c4;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.intro-divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #ff7300, #ff3b00);
+    margin: 0 auto;
+    border-radius: 3px;
+}
+
+/* Formulario compacto */
+.form-container {
+    background: rgba(22, 27, 34, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 115, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #ff7300, #ff3b00);
+}
+
+/* Efecto de luz interior */
+.form-container::after {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: -80px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,115,0,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #f1f5f9;
+    margin-bottom: 0.4rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.asterisk {
+    color: #ff7300;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    padding: 0.65rem 0.8rem;
+    background: rgba(13, 17, 23, 0.8);
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: #ffffff;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff7300;
+    box-shadow: 0 0 0 4px rgba(255, 115, 0, 0.15);
+    background: #0d1117;
+}
+
+.name-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.name-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-label {
+    font-size: 0.7rem;
+    color: #8b949e;
+    margin-top: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Botón moderno con gradiente y efecto hover */
+.btn-submit {
+    background: linear-gradient(135deg, #ff7300 0%, #ff3b00 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 0.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 15px rgba(255, 115, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 115, 0, 0.5);
+}
+
+/* Mapa compacto */
+.map-section-wrapper {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(22, 27, 34, 0.75);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 115, 0, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 1;
+}
+
+.map-title {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#caracasMap {
+    width: 100%;
+    height: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.map-description {
+    margin-top: 0.9rem;
+    color: #d8e0ea;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* ========== FOOTER ========== */
+.site-footer {
+    background: #0d1117;
+    border-top: 1px solid rgba(255, 115, 0, 0.2);
+    padding: 2.5rem 5% 1rem;
+    margin-top: 3rem;
+    color: #b0b8c4;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-col {
+    flex: 1 1 200px;
+}
+
+.footer-col h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: #ff7300;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 115, 0, 0.4);
+}
+
+.social-icons svg {
+    width: 20px;
+    height: 20px;
+}
+
+.whatsapp-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #25D366;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.whatsapp-link svg {
+    width: 24px;
+    height: 24px;
+}
+
+.whatsapp-link:hover {
+    color: #ffffff;
+}
+
+.footer-hours ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-hours li {
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    color: #8b949e;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    align-items: center;
+}
+
+.footer-legal-link {
+    color: #ff9d5c;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.footer-legal-link:hover {
+    color: #ffffff;
+}
+
+/* ========== MEDIA QUERIES PARA MÓVILES ========== */
+@media (max-width: 768px) {
+    .form-section {
+        padding: 1.5rem 4%;
+        gap: 1.5rem;
+    }
+
+    .form-intro h1 {
+        font-size: 1.6rem;
+    }
+
+    .form-intro p {
+        font-size: 0.9rem;
+    }
+
+    .form-container,
+    .map-section-wrapper {
+        padding: 1.2rem;
+        border-radius: 12px;
+        max-width: 100%;
+    }
+
+    .name-row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 0.9rem;
+    }
+
+    .form-group label {
+        font-size: 0.8rem;
+    }
+
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+        padding: 0.55rem 0.7rem;
+        font-size: 0.85rem;
+    }
+
+    .btn-submit {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    #caracasMap {
+        height: 220px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .footer-col {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-section {
+        padding: 1rem 3%;
+    }
+
+    .form-intro h1 {
+        font-size: 1.4rem;
+    }
+
+    .form-container,
+    .map-section-wrapper {
+        padding: 1rem;
+    }
+
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+        font-size: 0.8rem;
+    }
+
+    .btn-submit {
+        font-size: 0.85rem;
+    }
+
+    #caracasMap {
+        height: 180px;
+    }
+
+    .social-icons a {
+        width: 35px;
+        height: 35px;
+    }
+
+    .social-icons svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .whatsapp-link svg {
+        width: 20px;
+        height: 20px;
+    }
+}

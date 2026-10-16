@@ -1,0 +1,380 @@
+:root {
+    --primary-orange: #ff5500;
+    --primary-hover: #e04a00;
+    --dark-bg: #0d1117;
+    --light-bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --gradient-orange: linear-gradient(135deg, #ff7300 0%, #ff3b00 100%);
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 20px 40px rgba(255, 85, 0, 0.18);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--light-bg);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+.productos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 7%;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+#Logotipo {
+    width: 42px;
+    height: 42px;
+}
+
+.logo-text {
+    font-size: 1.55rem;
+    font-weight: 900;
+    color: var(--text-main);
+}
+
+.logo-text span {
+    color: var(--primary-orange);
+}
+
+.productos-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.productos-nav a {
+    color: var(--text-main);
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.productos-nav a:hover {
+    color: var(--primary-orange);
+}
+
+.btn-header,
+.btn-primary,
+.btn-producto {
+    display: inline-block;
+    border-radius: 50px;
+    font-weight: 800;
+    transition: all 0.3s ease;
+}
+
+.btn-header {
+    background: var(--gradient-orange);
+    color: #fff;
+    padding: 0.7rem 1.4rem;
+    box-shadow: 0 4px 15px rgba(255, 85, 0, 0.25);
+}
+
+.btn-header:hover {
+    transform: translateY(-2px);
+}
+
+.page-banner {
+    background: linear-gradient(rgba(13, 17, 23, 0.7), rgba(13, 17, 23, 0.7)),
+                url('../../assets/img/FondoHero.jpeg') center/cover no-repeat;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+    color: #fff;
+}
+
+.banner-content {
+    max-width: 760px;
+    text-align: center;
+}
+
+.eyebrow {
+    color: #ffb18a;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.banner-content h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.banner-content p {
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 640px;
+    margin: 0 auto 2rem;
+    font-size: 1.05rem;
+}
+
+.btn-primary {
+    background: var(--gradient-orange);
+    color: #fff;
+    padding: 0.95rem 2rem;
+    box-shadow: 0 10px 22px rgba(255, 85, 0, 0.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.catalogo {
+    padding: 5rem 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-title p {
+    color: var(--text-muted);
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.producto-card {
+    position: relative;
+    background: var(--card-bg);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid #edf2f7;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.producto-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--gradient-orange);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 0.4rem 0.7rem;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.producto-img {
+    height: 220px;
+    overflow: hidden;
+    background: #f8fafc;
+}
+
+.producto-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.producto-card:hover .producto-img img {
+    transform: scale(1.05);
+}
+
+.producto-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.producto-info h3 {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.producto-info p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+}
+
+.producto-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    border-top: 1px solid #edf2f7;
+    padding-top: 1rem;
+}
+
+.producto-price {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--text-main);
+}
+
+.btn-producto {
+    background: var(--gradient-orange);
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.82rem;
+}
+
+.site-footer {
+    background: linear-gradient(180deg, #0a111b 0%, #070d16 100%);
+    color: #dfe7f3;
+    padding: 4rem 7% 1.5rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2.5rem;
+}
+
+.footer-brand-row {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.footer-logo {
+    width: 42px;
+    height: 42px;
+}
+
+.footer-brand h4,
+.footer-links h4,
+.footer-whatsapp h4 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.footer-brand h4 span,
+.logo-text span {
+    color: var(--primary-orange);
+}
+
+.footer-brand p,
+.footer-links li,
+.footer-whatsapp p {
+    color: #a8b3c6;
+    font-size: 0.95rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.footer-links a,
+.whatsapp-link {
+    color: #dfe7f3;
+}
+
+.footer-links a:hover,
+.whatsapp-link:hover {
+    color: #ff9d5c;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.18);
+    text-align: center;
+    color: #9aa7ba;
+    font-size: 0.82rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    align-items: center;
+}
+
+.footer-legal-link {
+    color: #ff9d5c;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.footer-legal-link:hover {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .productos-header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 5%;
+    }
+
+    .productos-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .catalogo {
+        padding: 4rem 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .producto-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .btn-header {
+        width: 100%;
+        text-align: center;
+    }
+}
