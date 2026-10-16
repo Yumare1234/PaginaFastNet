@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+export function initPasswordToggle() {
   const toggleButtons = document.querySelectorAll('.toggle-password');
 
   toggleButtons.forEach((button) => {
@@ -20,4 +20,4 @@ document.addEventListener('DOMContentLoaded', () => {
       );
     });
   });
-});
+}

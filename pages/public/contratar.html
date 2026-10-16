@@ -159,40 +159,6 @@
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
-    <!-- Script de interacción -->
-    <script>
-        const contratoForm = document.getElementById('contratoForm');
-        if (contratoForm) {
-            contratoForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert("¡Solicitud enviada con éxito! Un asesor se pondrá en contacto contigo.");
-                window.location.href = "../../index.html"; 
-            });
-        }
-
-        const map = L.map('caracasMap').setView([10.4806, -66.9036], 11);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap contributors'
-        }).addTo(map);
-
-        const marker = L.marker([10.4806, -66.9036]).addTo(map);
-        const coordenadasInput = document.getElementById('coordenadas');
-
-        function actualizarCoordenadas(lat, lng) {
-            const valor = `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
-            coordenadasInput.value = valor;
-            marker.setLatLng([lat, lng]).addTo(map);
-            map.flyTo([lat, lng], 14, { duration: 1.2 });
-        }
-
-        map.on('click', function (e) {
-            const { lat, lng } = e.latlng;
-            actualizarCoordenadas(lat, lng);
-        });
-
-        actualizarCoordenadas(10.4806, -66.9036);
-    </script>
+    <script type="module" src="../../assets/js/modules/contrato-page.js"></script>
 </body>
 </html>

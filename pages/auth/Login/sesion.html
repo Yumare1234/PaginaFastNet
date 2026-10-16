@@ -71,62 +71,6 @@
         </div>
     </div>
 
-    <script src="../../../assets/js/passwordToggle.js"></script>
-    <script src="../../../assets/js/formMessages.js"></script>
-    <script>
-        // Validación y envío del formulario
-        document.getElementById('loginForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const email = document.getElementById('email').value.trim();
-            const password = document.getElementById('password').value.trim();
-
-            if (!email || !password) {
-                FastNetMessages.showMessage({
-                    text: 'Por favor completa todos los campos.',
-                    type: 'error'
-                });
-                return;
-            }
-
-            const formData = new FormData();
-            formData.append('email', email);
-            formData.append('password', password);
-
-            try {
-                const response = await fetch('../../../src/api/login.php', {
-                    method: 'POST',
-                    body: formData
-                });
-
-                const text = await response.text();
-                let result = {};
-
-                try {
-                    result = text ? JSON.parse(text) : {};
-                } catch (error) {
-                    throw new Error(text || 'Error interno del servidor.');
-                }
-
-                if (!response.ok) {
-                    throw new Error(result.message || 'Credenciales incorrectas.');
-                }
-
-                FastNetMessages.showMessage({
-                    text: result.message || '¡Inicio de sesión exitoso!',
-                    type: 'success',
-                    duration: 2200
-                });
-
-                setTimeout(() => {
-                    window.location.href = '../../home.php';
-                }, 700);
-            } catch (error) {
-                FastNetMessages.showMessage({
-                    text: error.message,
-                    type: 'error'
-                });
-            }
-        });
-    </script>
+    <script type="module" src="../../../assets/js/modules/login-page.js"></script>
 </body>
 </html>
